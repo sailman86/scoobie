@@ -1,0 +1,14 @@
+<h1><%= @user.first_name %></h1>
+
+<h3><%= @user.first_name %>'s Dog:</h3>
+<ul>
+  <li>
+    <% @dogs.each do |dog| %>
+      <%= dog.name %>
+      <%= dog.gender %>
+      <%= link_to "Delete #{dog.name}", user_path(dog.user), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
+  </li>
+</ul>
+
+<%= link_to 'Home', root_path %>
