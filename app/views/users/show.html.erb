@@ -6,7 +6,7 @@
     <% @dogs.each do |dog| %>
       <%= dog.name %>
       <%= dog.gender %>
-      <%= link_to "Delete #{dog.name}", user_path(dog.user), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </li>
 </ul>
