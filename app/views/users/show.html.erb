@@ -1,14 +1,17 @@
-<h1><%= @user.first_name %></h1>
+<h1><%= @user.first_name %>' profile page</h1>
 
-<h3><%= @user.first_name %>'s Dog:</h3>
-<ul>
-  <li>
-    <% @dogs.each do |dog| %>
-      <%= dog.name %>
-      <%= dog.gender %>
-      <%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %>
-    <% end %>
-  </li>
-</ul>
+<h3>These are my pets:</h3>
 
-<%= link_to 'Home', root_path %>
+<% @dogs.each do |dog| %>
+  <h3><%= dog.name.capitalize %></h3>
+  <% if dog.photo.attached?  %>
+    <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+  <% end %>
+  <p>Gender:<%= dog.gender %></p>
+  <p>Years: <%= dog.age %></p>
+  <p>Bread: <%= dog.breed %></p>
+  <%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
+<p><%= link_to 'Home', root_path %></p>

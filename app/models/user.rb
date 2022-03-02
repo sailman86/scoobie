@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :dogs, dependent: :destroy
   has_many :messages
   has_many :chatrooms, through: :friendships
+  has_one_attached :photo
 end
