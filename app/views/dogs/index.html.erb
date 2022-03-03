@@ -1,13 +1,25 @@
-<ul>
-  <% @dogs.each do |dog| %>
-    <li>
-      <% if dog.photo.attached?  %>
-        <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+<div class="container">
+  <%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search for nearby friends"
+      %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+   <% end %>
+</div>
+
+  <div class="container">
+    <ul>
+      <% @dogs.each do |dog| %>
+        <li>
+          <% if dog.photo.attached?  %>
+            <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+          <% end %>
+          <%= link_to dog.name, user_path(dog.user) %>
+        </li>
       <% end %>
-      <%= link_to dog.name, user_path(dog.user) %>
-    </li>
-  <% end %>
-</ul>
+    </ul>
+  </div>
 
-
-<%= link_to 'add a new dog', new_dog_path %>
+  <%= link_to 'add a new dog', new_dog_path %>

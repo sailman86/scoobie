@@ -1,7 +1,11 @@
 class DogsController < ApplicationController
   def index
     # @dogs = Dog.all
-    @dogs = policy_scope(Dog).order(created_at: :desc)
+    if params[:query].present?
+      @dogs = policy_scope(Dog).search_by_breed(params[:query])
+    else
+      @dogs = policy_scope(Dog).order(created_at: :desc)
+    end
   end
 
   def new
