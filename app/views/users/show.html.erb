@@ -1,3 +1,4 @@
+
 <!-- User name -->
 <h1><%= @user.first_name %>' profile page</h1>
 <!-- User Avatar -- need to implement bootstrap! -->
@@ -16,7 +17,12 @@
   <p>Gender:<%= dog.gender %></p>
   <p>Years: <%= dog.age %></p>
   <p>Bread: <%= dog.breed %></p>
-  <%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %>
+<% if policy(dog).destroy? %>
+        <li><%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %></li>
+      <% end %>
+      <% if policy(dog).edit? %>
+        <li><%= link_to "Edit #{dog.name}", edit_dog_path(dog) %></li>
+      <% end %>
 <% end %>
 
 <!-- Form to upload photos -- need to implement bootstrap!!-->
@@ -34,3 +40,17 @@
 
 <!-- Link to home -->
 <p><%= link_to 'Home', root_path %></p>
+
+<h1><%= @user.first_name %></h1>
+
+<h3><%= @user.first_name %>'s Dog:</h3>
+<ul>
+    <% @dogs.each do |dog| %>
+      <li> <%= dog.name %></li>
+      <li><%= dog.gender %></li>
+      
+    <% end %>
+</ul>
+
+<%= link_to 'Home', root_path %>
+
