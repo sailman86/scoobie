@@ -39,19 +39,3 @@
     <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
 <% end %>
-
-<!-- Link to home -->
-<p><%= link_to 'Home', root_path %></p>
-
-<h1><%= @user.first_name %></h1>
-
-<h3><%= @user.first_name %>'s Dog:</h3>
-<ul>
-    <% @dogs.each do |dog| %>
-      <li> <%= dog.name %></li>
-      <li><%= dog.gender %></li>
-
-    <% end %>
-</ul>
-
-<%= link_to 'Home', root_path %>
