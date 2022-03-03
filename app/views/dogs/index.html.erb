@@ -1,13 +1,39 @@
-<ul>
-  <% @dogs.each do |dog| %>
-    <li>
-      <% if dog.photo.attached?  %>
-        <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+<div class="container">
+  <div class="row">
+    <h2>Find dogs in your area</h2>
+  </div>
+  <div class="row">
+    <%# UI Kitt search bar, needs to be replaced later %>
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    <% end %>
+
+    <%# end of the UI Kitt search bar %>
+
+    <%# start of UI kitt buttons for male and female filter, linking to search filters %>
+    <%= link_to "male", "#", class: "btn btn-ghost" %>
+    <%= link_to "female", "#", class: "btn btn-ghost" %>
+    <%# end of the UI kitt buttons for male and female filter %>
+  </div>
+    <%# list of dog cards with a pic and distance %>
+  <div class=></div>
+    <div class="card-group ">
+      <% @dogs.each do |dog| %>
+      <div class="dog-card">
+          <% if dog.photo.attached?  %>
+            <%= cl_image_tag dog.photo.key, class: "dog-card-image", height: 180, width: 180, crop: :fill %>
+          <% end %>
+        <div class="dog-card-distance">
+          <%# linking to distance instead of name, change when seeds are done %>
+          <p><%= link_to dog.user.address, user_path(dog.user) %></p>
+        </div>
+      </div>
       <% end %>
-      <%= link_to dog.name, user_path(dog.user) %>
-    </li>
-  <% end %>
-</ul>
-
-
-<%= link_to 'add a new dog', new_dog_path %>
+    </div>
+  </div>
+</div>
