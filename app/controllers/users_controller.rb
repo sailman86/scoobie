@@ -6,9 +6,10 @@ class UsersController < ApplicationController
   end
 
   def add_photo
+    skip_authorization
     @user = User.find(params[:id])
     @user.update(photo_params)
-    redirect_to(:controller => "users", :action => "show")
+    redirect_to user_path(@user)
   end
 
   private
