@@ -15,10 +15,11 @@ class DogPolicy < ApplicationPolicy
   end
 
   def destroy?
-   user_is_owner?
+    user_is_owner?
   end
 
   private
+
   def user_is_owner?
     user == record.user
   end
