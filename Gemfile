@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 
 gem 'cloudinary', '~> 1.16.0'
+gem "geocoder"
+gem 'pg_search', '~> 2.3.0'
+
 gem 'faker'
 
 gem 'autoprefixer-rails', '10.2.5'

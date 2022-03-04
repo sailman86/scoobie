@@ -67,10 +67,10 @@ rita = User.create(first_name: 'Rita', last_name: "Böttcher", nickname: 'Rita',
                    bio: "41, love to go styling and shopping  trough the city!",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 richard = User.create(first_name: 'Richard', last_name: "Dicksen", nickname: 'Richard', address: 'Sredzkistraße 1 10435 Berlin',
-                      bio: "24, I'm in the forest as often i can, love to be out there in the nature!",
+                      bio: "24, I'm go in the forest as often i can, love to be out there in the nature!",
                       email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 maria = User.create(first_name: 'Maria', last_name: "Reichelt", nickname: 'Maria', address: 'Dorotheenstr. 30 10117 Berlin',
-                    bio: "31, Proud Mother loves to spend time with many people, exspecily dog owners",
+                    bio: "31, Proud Mother loves to spend time with many people, especially other dog owners",
                     email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 dolores = User.create(first_name: 'Dolores ', last_name: "Tetjev", nickname: 'Dolores', address: 'Andreasstr. 10243 Berlin',
                       bio: "39, Dog stylistin and owner since over 20 years",
@@ -79,16 +79,16 @@ dexter = User.create(first_name: 'Dexter', last_name: "Tysen", nickname: 'Dexter
                      bio: "49, Did my Biology Phd on Dogs, love to go in the nature, and parcipate in dog shows.",
                      email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 lisa = User.create(first_name: 'Lisa ', last_name: "Schneider", nickname: 'Lisa', address: 'Keibelstr. 6 10178 Berlin',
-                   bio: "19, Student of BWL orginal from bavaria now new in Berlin looking for new friends who love dogs as much i do ;)",
+                   bio: "19, Student of BWL orginal from bavaria now new in Berlin. Looking for new friends who love dogs as much i do ;)",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 valerie = User.create(first_name: 'Valerie', last_name: "Walter", nickname: 'Valerie', address: 'Sredzkistr. 10435 Berlin',
-                      bio: "23, Working in the office the whole day need someone to walk me and my dog so that we come out ;)",
+                      bio: "23, Working in the office the whole day. I need someone to walk me and my dog so that we come out ;)",
                       email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 anna = User.create(first_name: 'Anna', last_name: "Reiters", nickname: 'Anna', address: 'Behrenstr. 10117 Berlin',
-                   bio: "27, I'm a Stylitsin with my first dog, look to connect to over owner the learn more and have fun.",
+                   bio: "27, I'm a Stylitsin with my first dog, look to connect to other owner the learn more and have fun.",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 vera = User.create(first_name: 'Vera', last_name: "Pavlov", nickname: 'Vera', address: 'Annenstr. 4 10179 Berlin',
-                   bio: "25, I love to be out in nature with felix, looking for new wander routes around berlin that a good with dogs.",
+                   bio: "25, I love to be out in nature with felix, looking for new wander routes around berlin that are good with dogs.",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 angelica = User.create(first_name: 'Angelica', last_name: "Fechter", nickname: 'Angelica', address: 'Deutsch-Kroner-Ring 25 12349 Berlin',
                        bio: "29, I'm a proud Dog Mommy since i'm 14. I cannot stop talking about Dogs when i meet other people and love to meet other people that do that too.",
@@ -97,7 +97,9 @@ ina = User.create(first_name: 'Ina', last_name: "Drechsler", nickname: 'Ina', ad
                   bio: "31, I'm working with localy Animal shellter as foster mom for animals, adopeted one of them myself. Looking for a permament friend for People who a interest in fostering.",
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 tom = User.create(first_name: 'Tom', last_name: "Kupferberg", nickname: 'Tom', address: 'Ibisweg 12351 Berlin',
+
                   bio: "30, I'm new in Berlin together with Jerry looking forward for new connections and Fun!",
+
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 
 puts 'creating dogs'

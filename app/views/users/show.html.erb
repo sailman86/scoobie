@@ -6,7 +6,9 @@
   <%= cl_image_tag @user.avatar.key, height: 40, width: 40, crop: :fill %>
 <% end %>
 
+
 <p>I'm <%= @user.bio %></p>
+
 
 <!-- Pet Info -- need to implement bootstrap! -->
 <% @dogs.each do |dog| %>
@@ -16,7 +18,8 @@
   <% end %>
   <p>Gender:<%= dog.gender %></p>
   <p>Years: <%= dog.age %></p>
-  <p>Bread: <%= dog.breed %></p>
+  <p>Breed: <%= dog.breed %></p>
+  <p><%= dog.bio %></p>
 <% if policy(dog).destroy? %>
         <li><%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %></li>
       <% end %>
