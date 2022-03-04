@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2022_03_04_104203) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,7 +59,9 @@ ActiveRecord::Schema.define(version: 2022_03_04_104203) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
     t.float "distance"
+    t.string "bio"
     t.index ["user_id"], name: "index_dogs_on_user_id"
   end
 
