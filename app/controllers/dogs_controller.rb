@@ -2,11 +2,12 @@ class DogsController < ApplicationController
   def index
     # @dogs = Dog.all
     if params[:query].present?
-      @dogs = policy_scope(Dog).search_by_breed(params[:query])
+      @dogs = policy_scope(Dog).search_by_breed_and_gender(params[:query])
     else
       @dogs = policy_scope(Dog).order(created_at: :desc)
     end
   end
+  # Geocoder::Calculations.distance_between([47.858205,2.294359], [40.748433,-73.985655])
 
   def new
     @dog = Dog.new

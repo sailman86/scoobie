@@ -3,8 +3,8 @@ class Dog < ApplicationRecord
   has_one_attached :photo
 
   include PgSearch::Model
-  pg_search_scope :search_by_breed,
-    against: [:breed, :gender ],
+  pg_search_scope :search_by_breed_and_gender,
+    against: [:breed, :gender],
     associated_against: {
       user: [:address]
     },
