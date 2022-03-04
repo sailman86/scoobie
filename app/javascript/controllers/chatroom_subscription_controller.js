@@ -2,13 +2,16 @@ import { Controller } from "stimulus"
 import consumer from "../channels/consumer"
 
 export default class extends Controller {
-  static values = { chatroomId: Number}
+  static values = { chatroomId: Number }
+  static targets = ["messages", "form"]
+
   connect() {
-    consumer.subscriptions.create(
+    this.channel = consumer.subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: (message) => {
-        this.element.insertAdjacentHTML('beforeend', message)
-        this.element.scrollTop = this.element.scrollHeight
+        this.messagesTarget.insertAdjacentHTML('beforeend', message)
+        this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+        this.formTarget.reset()
        } }
       )
   }
