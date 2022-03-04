@@ -6,7 +6,7 @@
   <%= cl_image_tag @user.avatar.key, height: 40, width: 40, crop: :fill %>
 <% end %>
 
-<p>Hi i'm <%= @user.first_name %> and I have <%= @dogs.count %> beautifull dog.</p>
+<p>I'm <%= @user.bio %></p>
 
 <!-- Pet Info -- need to implement bootstrap! -->
 <% @dogs.each do |dog| %>
