@@ -97,7 +97,9 @@ ina = User.create(first_name: 'Ina', last_name: "Drechsler", nickname: 'Ina', ad
                   bio: "31, I'm working with localy Animal shellter as foster mom for animals, adopeted one of them myself. Looking for a permament friend for People who a interest in fostering.",
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 tom = User.create(first_name: 'Tom', last_name: "Kupferberg", nickname: 'Tom', address: 'Ibisweg 12351 Berlin',
-                  bio: "30, I'm new in Berling together with Jerry. Looking forward for new Friends and Fun!",
+
+                  bio: "30, I'm new in Berlin together with Jerry looking forward for new connections and Fun!",
+
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 
 puts 'creating dogs'
