@@ -1,5 +1,5 @@
-<div class="container">
-<%# Search bar for location and breed %>
+<%# SEARCHBAR %>
+<div>
   <%= form_tag root_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -10,26 +10,33 @@
    <% end %>
 
    <%# male/female buttons %>
-   <%= link_to "Male", dogs_path(query:"male")  %>
-   <%= link_to "Female", dogs_path(query:"female") %>
+   <%= link_to "Male", dogs_path(query:"male"), class: "fas fa-mars"  %>
+   <%= link_to "Female", dogs_path(query:"female") class: "fas fa-venus" %>
 </div>
+
 
 <% @dogs.each do |dog| %>
  <% dog.distance = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [dog.user.latitude, dog.user.longitude]) %>
 <% end %>
 
-  <div class="container">
-    <ul>
+<div class="container">
+  <%# list of dog cards with a pic and distance %>
+  <div class="row">
+    <div class="card-group">
       <% @dogs.sort { |dog| dog.distance }.each do |dog| %>
-        <li>
-          <% if dog.photo.attached?  %>
-            <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+        <div class="dog-card">
+          <% if dog.photo.attached? %>
+            <%= link_to user_path(dog.user) do %>
+              <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
+            <% end %>
           <% end %>
-          <%= link_to dog.name, user_path(dog.user) %>
-          <p><%= dog.distance.round(2) %> km</p>
-        </li>
+          <div class="dog-card-distance">
+            <%# linking to distance instead of name, change when seeds are done %>
+            <p><%= dog.distance.round(2) %> km</p>
+          </div>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
+</div>
 
-  <%= link_to 'add a new dog', new_dog_path %>
