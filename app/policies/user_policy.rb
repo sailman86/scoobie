@@ -9,4 +9,12 @@ class UserPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def add_photo?
+    true
+  end
+
+  def update?
+    true
+  end
 end

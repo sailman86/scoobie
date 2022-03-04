@@ -1,26 +1,29 @@
-<div class="container">
-  <div class="row">
-    <h2>Find dogs in your area</h2>
-  </div>
-  <div class="row">
+<%# SEARCHBAR %>
+<div>
+  <%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search for nearby friends"
+      %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+   <% end %>
 
-   <div class="main-search-input-wrap">
-     <div class="main-search-input fl-wrap">
-         <div class="main-search-input-item"> <input type="text" value="" placeholder="Search Products..."> </div> <button class="main-search-button">Search</button>
-     </div>
- </div class="row">
-    <%# end of the UI Kitt search bar %>
-    <div class="gender-icons">
-    <%# start of UI kitt buttons for male and female filter, linking to search filters %>
-      <%= link_to "", "#", class: "fas fa-mars" %>
-      <%= link_to "", "#", class: "fas fa-venus" %>
-    <%# end of the UI kitt buttons for male and female filter %>
-    </div>
-  </div>
+   <%# male/female buttons %>
+   <%= link_to "Male", dogs_path(query:"male"), class: "fas fa-mars"  %>
+   <%= link_to "Female", dogs_path(query:"female") class: "fas fa-venus" %>
+</div>
+
+
+<% @dogs.each do |dog| %>
+ <% dog.distance = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [dog.user.latitude, dog.user.longitude]) %>
+<% end %>
+
+<div class="container">
   <%# list of dog cards with a pic and distance %>
   <div class="row">
     <div class="card-group">
-      <% @dogs.each do |dog| %>
+      <% @dogs.sort { |dog| dog.distance }.each do |dog| %>
         <div class="dog-card">
           <% if dog.photo.attached? %>
             <%= link_to user_path(dog.user) do %>
@@ -29,10 +32,11 @@
           <% end %>
           <div class="dog-card-distance">
             <%# linking to distance instead of name, change when seeds are done %>
-            <p><%= link_to dog.user.address, user_path(dog.user) %></p>
+            <p><%= dog.distance.round(2) %> km</p>
           </div>
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
