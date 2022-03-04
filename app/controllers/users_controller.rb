@@ -3,6 +3,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @dogs = @user.dogs
+    @friendship = Friendship.new
+    @friendship.asker_id = current_user
+    @friendship.receiver_id = User.find(params[:id])
   end
 
   def add_photo
