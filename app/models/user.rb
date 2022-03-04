@@ -10,4 +10,7 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :friendships
   has_one_attached :avatar
   has_many_attached :photos
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
