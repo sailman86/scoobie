@@ -4,11 +4,16 @@
 
 .dog-card-picture {
   border-radius: 50%;
-  height: 180px;
-  width: 180px;
+  height: 90px;
+  width: 90px;
   object-fit: cover;
+  border: solid violet 3px;
 }
 
+.card-title {
+  justify-content: center;
+  align-items: center;
+}
 
 @media(max-width: 992px) {
   .card-group {
@@ -18,6 +23,6 @@
 
 @media(max-width: 768px) {
   .card-group {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
