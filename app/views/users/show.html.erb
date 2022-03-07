@@ -1,18 +1,5 @@
 <div class="container">
     <!-- User name -->
-  <h1><%= @user.first_name %>' profile page</h1>
-  <!-- User Avatar -- need to implement bootstrap! -->
-  <% if @user.avatar.attached?  %>
-    <%= cl_image_tag @user.avatar.key, height: 40, width: 40, crop: :fill %>
-  <% end %>
-
-  <%= link_to 'message', 'http://localhost:3000/chatrooms/1', class: "btn btn-primary" %>
-
-
-  <p>I'm <%= @user.bio %></p>
-
-  <button><%= link_to "Message me", "http://www.scoobie.xyz/chatrooms/2", class: "btn btn-primary" %></button>
-
   <% if policy(@user).edit? %>
       <li><%= link_to "Edit #{@user.first_name}", edit_user_registration_path %></li>
   <% end %>
@@ -33,15 +20,14 @@
   </div>
   <div class="friendship">
     <% if @friendship.exists? %>
-      <p>You alredy sent the friend request </p>
+      <div class="show_user_card_button">
+      <%= link_to 'Write me', 'http://localhost:3000/chatrooms/1', class: "btn btn-primary" %>
+  </div>
     <% else %>
       <%= button_to "Request", user_friendships_path(@user), method: :post %>
     <% end %>
   </div>
   <%# if stsatement, if we're friends, button to appear %>
-  <div class="show_user_card_button">
-    <%= link_to 'Write me', 'http://localhost:3000/chatrooms/1', class: "btn btn-primary" %>
-  </div>
 </div>
 
 <div class="show_user_card_bio">
@@ -49,8 +35,8 @@
 </div>
 <!-- Pet Info -- need to implement bootstrap! -->
 <div class="show_dog_card">
-  <div class="show_dog_card_image">
   <% @dogs.each do |dog| %>
+  <div class="show_dog_card_image">
     <% if dog.photo.attached?  %>
       <%= cl_image_tag dog.photo.key, height: 130, width: 130, crop: :fill, class: "rounded-circle" %>
     <% end %>
@@ -82,21 +68,6 @@
     <%= f.button :submit, class: "btn-chatroom" %>
   <%end %>
 <% end  %>
-  <% if policy(dog).destroy? %>
-          <li><%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %></li>
-        <% end %>
-        <% if policy(dog).edit? %>
-          <li><%= link_to "Edit #{dog.name}", edit_dog_path(dog) %></li>
-        <% end %>
-  <% end %>
-
-  <!-- Form to upload photos -- need to implement bootstrap!!-->
-  <% if policy(@user).add_photo? %>
-    <%=simple_form_for @user, url: add_photo_user_path(@user), method: :patch do |f| %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }  %>
-      <%= f.button :submit, class: "btn-chatroom" %>
-    <%end %>
-  <% end  %>
 
   <!-- Gallery of photos -- need to implement bootstrap!! -->
   <% if @user.photos.attached?  %>
