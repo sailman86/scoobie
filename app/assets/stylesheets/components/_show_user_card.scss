@@ -1,0 +1,37 @@
+.show_user_card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px;
+}
+
+.show_user_card_image {
+  height: 100%;
+  width: 140px;
+  object-position: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.show_user_card_name {
+  font-size: 16px;
+  font-weight: bold;
+  padding-right: 80px;
+}
+
+.show_user_card_bio {
+  font-size: 12px;
+  padding: 15px 15px;
+}
+
+.show_user_card_button {
+  padding-top: 70px;
+}
+
+.show_user_card .show_user_card_bio {
+  padding: 16px;
+  background: white;
+}
