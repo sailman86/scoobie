@@ -13,6 +13,12 @@
 
   <button><%= link_to "Message me", "http://www.scoobie.xyz/chatrooms/2", class: "btn btn-primary" %></button>
 
+  <% if policy(@user).edit? %>
+      <li><%= link_to "Edit #{@user.first_name}", edit_user_registration_path %></li>
+  <% end %>
+  <% if policy(@user).destroy? %>
+      <li><%= link_to "Delete #{@user.first_name}", user_registration_path, method: :delete, data: { confirm: "Do you want to delete #{@user.first_name}?"} %></li>
+  <% end %>
 
   <!-- Pet Info -- need to implement bootstrap! -->
   <% @dogs.each do |dog| %>
