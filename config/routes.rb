@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       patch :add_photo
     end
   end
+  resources :users, only: [:edit, :destroy]
   resources :dogs, except: :show
 end
