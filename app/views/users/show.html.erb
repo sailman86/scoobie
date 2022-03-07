@@ -21,7 +21,7 @@
   <div class="friendship">
     <% if @friendship.exists? %>
       <div class="show_user_card_button">
-      <%= link_to 'Write me', 'http://localhost:3000/chatrooms/1', class: "btn btn-primary" %>
+      <%= link_to 'Write me', 'http://localhost:3000/chatrooms/2', class: "btn btn-primary" %>
   </div>
     <% else %>
       <%= button_to "Request", user_friendships_path(@user), method: :post %>
