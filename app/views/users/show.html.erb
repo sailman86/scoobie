@@ -7,8 +7,11 @@
 <!-- User name -->
 <h1><%= @user.first_name %>' profile page</h1>
 <%# Display the request only if we are not the current_user %>
-  <%= link_to "Request friendship", new_user_friendship_path(@user) %>
-
+<% if @friendship.exists? %>
+  <p>You alredy sent the friend request </p>
+<% else %>
+  <%= button_to "Request", user_friendships_path(@user), method: :post %>
+<% end %>
 
 <p>age: <%= @user.bio %></p>
 

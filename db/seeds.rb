@@ -11,6 +11,8 @@ require "open-uri"
 # user = User.create(first_name: '', last_name: '', nickname: '', address: '',
 # bio: "",
 # email: Faker::Internet.email(domain: 'customdomain.com') , password: '123456'
+puts "destroy friendships"
+Friendship.destroy_all
 
 puts 'destroying users'
 User.destroy_all

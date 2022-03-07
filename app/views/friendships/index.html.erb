@@ -1,5 +1,20 @@
-<h1>Your friends</h1>
+<h1>Those are all of your friends.</h1>
 
-<%= @friendships.each do |friendship| %>
-  <%= friendship.asker %>
+<h2>Received request</h2>
+<% if @received_requests %>
+  <% @received_requests.each do |request| %>
+    <%= request.asker.nickname %>
+    <%= link_to "accept",  accept_friendship_path(request), method: :put %>
+    <%= link_to "deny",  decline_friendship_path(request), method: :put %>
+  <% end %>
 <% end %>
+
+<h2>Pending request</h2>
+<ul>
+  <% @pending_requests.each do |request| %>
+  <li>
+      <%= request.receiver.avatar.key %>
+      <%= request.receiver.nickname %>
+  </li>
+     <% end %>
+</ul>
