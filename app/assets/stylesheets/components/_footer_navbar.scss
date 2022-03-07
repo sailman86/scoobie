@@ -4,20 +4,28 @@
   align-items: center;
 }
 
-.icon {
-  background-color: white;
+.i {
+
   height: 58px;
   width: 58px;
   border-radius: 50px;
   padding-top: 3px;
   background-size: fit;
+  align-items: center;
 }
 
+.fas {
+  color: #845EC2;
+}
 .navbar {
   height: 20vw;
   width: 100%;
   justify-content: space-between;
+  background-color: rgb(230, 230, 230);
+}
+
+.container {
   position: sticky;
   bottom: 0;
-  background-color: #845EC2;
+  border-top: 0.2px solid #845EC2;
 }
