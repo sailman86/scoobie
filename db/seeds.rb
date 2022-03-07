@@ -8,6 +8,13 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# user = User.create(first_name: '', last_name: '', nickname: '', address: '',
+# bio: "",
+# email: Faker::Internet.email(domain: 'customdomain.com') , password: '123456'
+puts "destroy friendships"
+Friendship.destroy_all
+
 # claudio@domain.com , steffi@domain.com , roger@domain.com , ron@domain.com
 
 
@@ -15,6 +22,7 @@ puts 'destroying avatar'
 User.all.each do |user|
   user.avatar.purge
 end
+
 
 puts 'destroying users'
 User.destroy_all
