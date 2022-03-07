@@ -1,7 +1,7 @@
 class CreateFriendships < ActiveRecord::Migration[6.1]
   def change
     create_table :friendships do |t|
-      t.string :status
+      t.boolean :status
       t.references :asker, foreign_key: { to_table: :users }
       t.references :receiver, foreign_key: { to_table: :users }
 
