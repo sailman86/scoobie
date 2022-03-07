@@ -1,25 +1,22 @@
-<%# SEARCHBAR %>
-<div>
-  <%= form_tag root_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search for nearby friends"
-      %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-   <% end %>
-
-   <%# male/female buttons %>
-   <%= link_to "Male", dogs_path(query:"male"), class: "fas fa-mars"  %>
-   <%= link_to "Female", dogs_path(query:"female"), class: "fas fa-venus" %>
-</div>
-
-
 <% @dogs.each do |dog| %>
  <% dog.distance = Geocoder::Calculations.distance_between([current_user.latitude, current_user.longitude], [dog.user.latitude, dog.user.longitude]) %>
 <% end %>
 
 <div class="container">
+  <%# SEARCHBAR %>
+  <div class="search-box">
+    <%= form_tag root_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class:"main-search-input col p-2", type:"search", placeholder: "Search for nearby friends" %>
+      <%= submit_tag "Search", class:"main-search-button col p-2" %>
+    <% end %>
+  </div>
+
+  <%# gender filter %>
+  <div class="filters">
+    <%= link_to "", dogs_path(query:"male"), class: "fas fa-mars col-sm p-2 male"  %>
+    <%= link_to "", dogs_path(query:"female"), class: "fas fa-venus col-sm p-2 female" %>
+  </div>
+
   <%# list of dog cards with a pic and distance %>
   <div class="row">
     <div class="card-group">
@@ -30,8 +27,10 @@
               <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
             <% end %>
           <% end %>
+          <div class="card-title">
+            <h2><%= dog.name %></h2>
+          </div>
           <div class="dog-card-distance">
-            <%# linking to distance instead of name, change when seeds are done %>
             <p><%= dog.distance.round(2) %> km</p>
           </div>
         </div>
