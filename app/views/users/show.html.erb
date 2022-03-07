@@ -6,6 +6,8 @@
     <%= cl_image_tag @user.avatar.key, height: 40, width: 40, crop: :fill %>
   <% end %>
 
+<%= link_to 'message', 'http://localhost:3000/chatrooms/1', class: "btn btn-primary" %>
+
 
   <p>I'm <%= @user.bio %></p>
 
