@@ -15,22 +15,24 @@
 
 
 <!-- Pet Info -- need to implement bootstrap! -->
-<% @dogs.each do |dog| %>
-  <h3><%= dog.name.capitalize %></h3>
-  <% if dog.photo.attached?  %>
-    <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+<div class="show_dog_card">
+  <% @dogs.each do |dog| %>
+    <h3><%= dog.name.capitalize %></h3>
+    <% if dog.photo.attached?  %>
+      <%= cl_image_tag dog.photo.key, height: 50, width: 50, crop: :fill %>
+    <% end %>
+    <p>Gender:<%= dog.gender %></p>
+    <p>Years: <%= dog.age %></p>
+    <p>Breed: <%= dog.breed %></p>
+    <p><%= dog.bio %></p>
+  <% if policy(dog).destroy? %>
+          <li><%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %></li>
+        <% end %>
+        <% if policy(dog).edit? %>
+          <li><%= link_to "Edit #{dog.name}", edit_dog_path(dog) %></li>
+        <% end %>
   <% end %>
-  <p>Gender:<%= dog.gender %></p>
-  <p>Years: <%= dog.age %></p>
-  <p>Breed: <%= dog.breed %></p>
-  <p><%= dog.bio %></p>
-<% if policy(dog).destroy? %>
-        <li><%= link_to "Delete #{dog.name}", dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } %></li>
-      <% end %>
-      <% if policy(dog).edit? %>
-        <li><%= link_to "Edit #{dog.name}", edit_dog_path(dog) %></li>
-      <% end %>
-<% end %>
+</div>
 
 <!-- Form to upload photos -- need to implement bootstrap!!-->
 <% if policy(@user).add_photo? %>
