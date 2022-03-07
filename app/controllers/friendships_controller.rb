@@ -47,8 +47,6 @@ class FriendshipsController < ApplicationController
     @friendship.status = true
   end
 
-  private
-
   # def friendship_status
   #   @pending_requests = Friendship.where(asker: current_user, status: false)
   #   authorize @pending_requests
