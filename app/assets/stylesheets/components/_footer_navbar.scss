@@ -1,0 +1,26 @@
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-3 {
+background-color: #845EC2;
+  border: 1px solid rgb(234, 0, 255);
+  height: fit-content;
+}
+
+.icon {
+  background-color: white;
+  border-radius: 50px;
+  padding-left: 18px;
+  padding-top: 3px;
+  background-size: contain;
+}
+
+.footer_navbar_container {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+}

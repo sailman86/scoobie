@@ -1,0 +1,40 @@
+.search-box {
+  margin: 10px;
+}
+
+.main-search-input {
+  border-radius: 12px;
+  border: solid rgb(209, 209, 209) 1px;
+}
+
+.filters {
+  width: 32px;
+  height: 32px;
+}
+
+.main-search-button {
+  border-radius: 12px;
+  background-color: violet;
+  color: aliceblue;
+  border: solid white 1px;
+}
+
+.filters {
+  display:flex;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.male {
+  background-color: rgb(72, 72, 253);
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+}
+
+.female {
+  background-color: pink;
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+}
