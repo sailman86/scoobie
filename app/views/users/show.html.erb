@@ -1,17 +1,4 @@
 <div class="container">
-    <!-- User name -->
-   <div class="current_user_actions">
-    <% if policy(@user).edit? %>
-      <%= link_to edit_user_registration_path do %>
-        <i class="fas fa-edit"></i>
-      <% end %>
-    <% end %>
-    <% if policy(@user).destroy? %>
-        <%= link_to user_registration_path, method: :delete, data: { confirm: "Do you want to delete #{@user.first_name}?"} do %>
-        <i class="fas fa-trash-alt"></i>
-        <% end %>
-    <% end %>
-  </div>
 
 <!-- User name -->
 <div class="show_user_card">
