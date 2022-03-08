@@ -1,12 +1,14 @@
 // Specific CSS for your show-page
+.container {
+margin: 10px;
+}
 
 .form {
   padding: 10px;
 }
 
 .name {
-  border-radius: 12px;
-  border: solid #d1d1d1 1px;
+  width: 180px;
 }
 
 .gender {
@@ -24,8 +26,7 @@
 }
 
 .breed {
-  border-radius: 12px;
-  border: solid #d1d1d1 1px;
+  width: 190px;
 }
 
 .upload_submit {
