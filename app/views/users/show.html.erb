@@ -65,16 +65,7 @@
     </div>
   </div>
 <% end %>
-<%# need to be hidden with pundit, for admin view and access only %>
-<!-- Form to upload photos -- need to implement bootstrap!!-->
-<% if policy(@user).add_photo? %>
-  <%=simple_form_for @user, url: add_photo_user_path(@user), method: :patch do |f| %>
-    <div class= "d-none">
-      <%= f.input :photos, as: :file, input_html: { multiple: true, id: "custom-button" }  %>
-    </div>
-    <%= f.submit 'Update', class: "btn btn-default btn-primary" %>
-  <% end %>
-<% end  %>
+
 
   <!-- Gallery of photos -- need to implement bootstrap!! -->
   <% if @user.photos.attached?  %>
