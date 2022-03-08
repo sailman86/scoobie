@@ -19,10 +19,12 @@
     <h2>Hi, I'm <%= @user.first_name %></h2>
   </div>
   <div class="friendship">
-    <% if @friendship.exists? %>
+    <% if @friendship &&  @friendship.status == true %>
       <div class="show_user_card_button">
-      <%= link_to 'Write me', 'http://localhost:3000/chatrooms/2', class: "btn btn-primary" %>
-  </div>
+       <%= link_to 'Write me', chatroom_path(@friendship.chatroom), class: "btn btn-primary" %>
+      </div>
+    <% elsif @friendship && @friendship.status == false %>
+       <div> <p>Pending request</p></div>
     <% else %>
       <%= button_to "Request", user_friendships_path(@user), method: :post %>
     <% end %>

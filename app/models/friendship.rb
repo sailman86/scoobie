@@ -1,6 +1,5 @@
 class Friendship < ApplicationRecord
-
   belongs_to :asker, class_name: "User"
   belongs_to :receiver, class_name: "User"
-  has_many :chatrooms, dependent: :destroy
+  has_one :chatroom, dependent: :destroy
 end
