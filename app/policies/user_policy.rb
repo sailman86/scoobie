@@ -11,7 +11,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def add_photo?
-    true
+    user == record
   end
 
   def update?
