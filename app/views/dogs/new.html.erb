@@ -1,10 +1,32 @@
-<%= simple_form_for @dog do |f| %>
-  <%= f.input :name %>
-  <%= f.input :gender, collection: ['male', 'female'] %>
-  <%= f.input :age %>
-  <%= f.input :breed %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
-
-<%= link_to '++home++', root_path %>
+<h4>Let your dog meet new friends</h4>
+<%# <h3>Introduce us to your dog</h3>%>
+<div class="d-flex">
+  <form>
+    <div class="form">
+        <%= simple_form_for @dog do |f| %>
+          <div class="name">
+            <%= f.input :name %>
+          </div>
+          <div class="d-flex">
+            <div class="gender">
+              <%= f.input :gender, collection: ['male', 'female'] %>
+            </div>
+            <div class="age">
+              <%= f.input :age %>
+            </div>
+          </div>
+          <div class="breed">
+            <%= f.input :breed %>
+          </div>
+          <div class="upload">
+              <%= f.input :photo, as: :file %>
+              <%= f.submit%>
+          </div>
+        <% end %>
+    </div>
+  </form>
+  <div class="image">
+    <%= image_tag "2dogs.jpg", height: 210, width: 120, crop: :fill, class: "rounded"  %>
+  </div>
+</div>
+<%# deleted ++home++ link, as it was one too many %>

@@ -1,0 +1,43 @@
+// Specific CSS for your show-page
+
+.form {
+  padding: 10px;
+}
+
+.name {
+  border-radius: 12px;
+  border: solid #d1d1d1 1px;
+}
+
+.gender {
+  width: 120px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.age {
+  width: 60px;
+  padding-left: 20px;
+}
+
+.breed {
+  border-radius: 12px;
+  border: solid #d1d1d1 1px;
+}
+
+.upload_submit {
+  width: fit-content;
+}
+
+.image {
+ margin: 5px;
+ padding-right: 16px;
+ padding-top: 30px;
+}
+
+.h4 {
+  margin: 10px;
+}
