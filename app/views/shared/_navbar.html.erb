@@ -24,6 +24,9 @@
     <div class="dropdown-menu dropdown-menu-end" style="position: absolute;"aria-labelledby="navbarDropdown">
       <%= link_to 'Add a new Dog', new_dog_path, class: "dropdown-item" %>
       <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
+      <% if policy(current_user).edit? %>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
+      <% end %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
   </li>
