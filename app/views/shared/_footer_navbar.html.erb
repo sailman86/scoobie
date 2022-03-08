@@ -2,7 +2,11 @@
     <%= link_to root_path do %>
       <i class="fas fa-home rounded-circle" style="font-size: 2.8em"></i>
     <% end %>
-    <i class="fas fa-paw" style="font-size: 2.8em;"></i>
+    <%= link_to user_friendships_path(current_user) do %>
+      <i class="fas fa-paw" style="font-size: 2.8em;"></i>
+    <% end %>
     <i class="fas fa-plus" style="font-size: 2.8em;"></i>
-    <i class="fas fa-comment-alt" style="font-size: 2.8em;"></i>
+    <%= link_to chatrooms_path do %>
+     <i class="fas fa-comment-alt" style="font-size: 2.8em;"></i>
+    <% end %>
 </nav>
