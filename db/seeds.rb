@@ -90,7 +90,7 @@ anita = User.create(first_name: 'Anita ', last_name: "Iglesias", nickname: 'Anit
 file = URI.open("https://media.istockphoto.com/photos/confident-businesswoman-over-gray-background-picture-id682897825?k=20&m=682897825&s=612x612&w=0&h=k1YWeDssr4GP-n7li1CAOCN2l_YRIycvq37sK1PP6is=")
 anita.avatar.attach(io: file, filename: "anita.jpg", content_type: "image/jpg")
 
-anja = User.create(first_name: 'Anja', last_name: "Bauer", nickname: 'Anja', address: 'Kol. Zur Windmühle 378 12349 Berlin',
+anja = User.create(first_name: 'Anja', last_name: "Bauer", nickname: 'Anja', address: 'Revaler Straße 99, 10245 Berlin',
                    bio: "33, we love to meet up in comy bars and hang out with friends. If you wanna join us, message us!",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://www.silive.com/resizer/VbWpGZEmZMXbbI5VHogUGUUsKbo=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/YHSH3IEJ5NEIFBP7CVP6M4PSXA.JPG")
@@ -108,7 +108,7 @@ silvia = User.create(first_name: 'Silvia ', last_name: "Bergmann", nickname: 'Si
 file = URI.open("https://s.yimg.com/uu/api/res/1.2/nGgS4rTVZ60MXdQXRernUg--~B/aD05MzM7dz03MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/who_what_wear_581/46535154b88eef8bfe22df8fd569cd22")
 silvia.avatar.attach(io: file, filename: "silvia.jpg", content_type: "image/jpg")
 
-max = User.create(first_name: 'Max', last_name: "Springer", nickname: 'Max', address: 'Adolfstraße 313347 Berlin',
+max = User.create(first_name: 'Max', last_name: "Springer", nickname: 'Max', address: 'Waldemarstraße 60 10997 Berlin',
                   bio: "26, my dog Rex and are training everyday in one of Wedding's park, if you are up for some fun time, send us a message and join us!",
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://i.pinimg.com/originals/1c/53/6a/1c536ac192c849089144825b84bfbd54.jpg")

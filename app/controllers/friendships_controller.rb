@@ -31,6 +31,9 @@ class FriendshipsController < ApplicationController
     @friendship.status = true
     authorize @friendship
     if @friendship.save
+      @chatroom = Chatroom.new
+      @chatroom.friendship = @friendship
+      @chatroom.save
       redirect_to user_friendships_path(current_user)
     end
   end

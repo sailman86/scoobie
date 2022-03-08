@@ -1,3 +1,22 @@
-<% @chatrooms.each do |chatroom|  %>
-  <%= chatroom.id %>
-<% end %>
+<h1><strong>Chat</strong></h1>
+
+<ul>
+  <% @chatrooms.each do |chatroom|  %>
+    <% if chatroom.friendship.asker == current_user %>
+      <li>
+        <% if chatroom.friendship.receiver.avatar.attached? %>
+          <%= cl_image_tag chatroom.friendship.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+        <% end %>
+        <%= link_to chatroom.friendship.receiver.nickname, chatroom_path(chatroom) %>
+      </li>
+    <% end %>
+      <% if chatroom.friendship.receiver == current_user%>
+        <li>
+          <% if chatroom.friendship.asker.avatar.attached? %>
+           <%= cl_image_tag chatroom.friendship.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+          <% end %>
+          <%= link_to chatroom.friendship.asker.nickname, chatroom_path(chatroom) %>
+        </li>
+      <% end %>
+  <% end %>
+</ul>
