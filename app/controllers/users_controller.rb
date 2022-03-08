@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @dogs = @user.dogs
-    @friendship = Friendship.where(asker: current_user, receiver: @user)
+    @friendship = Friendship.where(asker: current_user, receiver: @user).first
     # @friendship.asker_id = current_user
     # @friendship.receiver_id = User.find(params[:id])
   end

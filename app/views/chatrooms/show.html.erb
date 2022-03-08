@@ -17,3 +17,9 @@
       <%= f.submit "Send", class: "btn btn-primary" %>
     <% end %>
 </div>
+
+<%# Link to index chats/ needs to be put in the Mesage icon footer %>
+<%= link_to "Chats", chatrooms_path %>
+
+<%# Link to pending and sent requests for friendships(dashboard) needs to go in the PAW Icon on footer %>
+<%= link_to "Dashboard", user_friendships_path(current_user) %>
