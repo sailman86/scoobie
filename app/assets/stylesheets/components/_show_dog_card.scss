@@ -1,5 +1,6 @@
 .show_dog_card {
-
+  display: flexbox;
+  margin-bottom: 15px;
 }
 
 .show_dog_card_image {
@@ -16,4 +17,6 @@
   padding-top: 12px;
 }
 
-.show_dog_card_curretn_user_actions
+.show_dog_card_current_user_actions {
+  justify-content: end;
+}

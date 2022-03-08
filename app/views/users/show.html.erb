@@ -39,44 +39,43 @@
 <div class="show_user_card_bio">
     <h5>I'm <%= @user.bio %></h5>
 </div>
+<% @dogs.each do |dog| %>
 <!-- Pet Info -- need to implement bootstrap! -->
-<div class="show_dog_card">
-  <% @dogs.each do |dog| %>
-  <div class="d-flex">
-    <div class="show_dog_card_image">
-      <% if dog.photo.attached?  %>
-        <%= cl_image_tag dog.photo.key, height: 130, width: 130, crop: :fill, class: "rounded-circle" %>
-      <% end %>
-    </div>
-    <div class="show_dog_card_bio">
-      <div class="show_dog_card_name">
-        <h3><strong><%= dog.name.capitalize %></strong></h3>
-      </div>
-      <div class="show_dog_card_p">
-        <p>Gender: <%= dog.gender %></p>
-        <p>Age: <%= dog.age %></p>
-        <p>Breed: <%= dog.breed %></p>
-      </div>
-    </div>
-  </div>
-  <%# wrapping current user actions into a div, to place them into card. do not delete!  %>
-  <div class="show_dog_card_current_user_actions">
-    <% if policy(dog).destroy? %>
-      <%# removed dog.name to display just the icons %>
-      <%= link_to dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class="fas fa-trash-alt"></i>
+  <div class="show_dog_card d-flex">
+    <div class="d-flex">
+      <div class="show_dog_card_image">
+        <% if dog.photo.attached?  %>
+          <%= cl_image_tag dog.photo.key, height: 130, width: 130, crop: :fill, class: "rounded-circle" %>
         <% end %>
-    <% end %>
-    <% if policy(dog).edit? %>
-      <%# removed dog.name to display just the icons %>
-      <%= link_to edit_dog_path(dog) do %>
-        <i class="fas fa-edit"></i>
+      </div>
+      <div class="show_dog_card_bio">
+        <div class="show_dog_card_name">
+          <h3><strong><%= dog.name.capitalize %></strong></h3>
+        </div>
+        <div class="show_dog_card_p">
+          <p>Gender: <%= dog.gender %></p>
+          <p>Age: <%= dog.age %></p>
+          <p>Breed: <%= dog.breed %></p>
+        </div>
+      </div>
+    </div>
+    <%# wrapping current user actions into a div, to place them into card. do not delete!  %>
+    <div class="show_dog_card_current_user_actions">
+      <% if policy(dog).destroy? %>
+        <%# removed dog.name to display just the icons %>
+        <%= link_to dog_path(dog), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %>
       <% end %>
+      <% if policy(dog).edit? %>
+        <%# removed dog.name to display just the icons %>
+        <%= link_to edit_dog_path(dog) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
-
+<% end %>
 <%# need to be hidden with pundit, for admin view and access only %>
 <!-- Form to upload photos -- need to implement bootstrap!!-->
 <% if policy(@user).add_photo? %>
