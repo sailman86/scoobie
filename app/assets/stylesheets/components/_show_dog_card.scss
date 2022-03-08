@@ -1,5 +1,6 @@
 .show_dog_card {
-  display: flex;
+  display: flexbox;
+  margin-bottom: 15px;
 }
 
 .show_dog_card_image {
@@ -14,4 +15,8 @@
 .show_dog_card_p {
   line-height: 30%;
   padding-top: 12px;
+}
+
+.show_dog_card_current_user_actions {
+  justify-content: end;
 }
