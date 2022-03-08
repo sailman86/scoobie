@@ -15,7 +15,7 @@
   width: 140px;
   object-position: center;
   align-items: center;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .show_user_card_name {
@@ -26,11 +26,16 @@
 
 .show_user_card_bio {
   font-size: 12px;
-  padding: 15px 15px;
+  padding: 12px 15px;
 }
 
 .show_user_card_button {
   padding-top: 70px;
+  padding-right: 25px;
+}
+
+.current_user_actions {
+  
 }
 
 .show_user_card .show_user_card_bio {
