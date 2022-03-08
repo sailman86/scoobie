@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
-  resources :users, only: :show do
+  resources :users, only: [:show, :update] do
     resources :friendships, only: [:new, :create, :show, :index]
     member do
       patch :add_photo
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :dogs, except: :show
   put "friendships/:id", to: "friendships#accept", as: "accept_friendship"
   put "friendships/:id", to: "friendships#decline", as: "decline_friendship"
+  get "users/:id/add_photo", to: "users#add_photo"
 end

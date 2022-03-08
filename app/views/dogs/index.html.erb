@@ -13,8 +13,12 @@
 
   <%# gender filter %>
   <div class="filters">
-    <%= link_to "", dogs_path(query:"male"), class: "fas fa-mars col-sm p-2 male"  %>
-    <%= link_to "", dogs_path(query:"female"), class: "fas fa-venus col-sm p-2 female" %>
+   <div class="round-span male-span">
+      <%= link_to "", dogs_path(query:"male"), class: "fas fa-mars col-sm p-2 male"  %>
+    </div>
+    <div class="round-span female-span">
+      <%= link_to "", dogs_path(query:"female"), class: "fas fa-venus col-sm p-2 female" %>
+    </div>
   </div>
 
   <%# list of dog cards with a pic and distance %>

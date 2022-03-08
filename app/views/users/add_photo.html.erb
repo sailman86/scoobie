@@ -1,0 +1,9 @@
+<%# need to be hidden with pundit, for admin view and access only %>
+<!-- Form to upload photos -- need to implement bootstrap!!-->
+
+<% if policy(@user).add_photo? %>
+  <%=simple_form_for @user, method: :patch do |f| %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true, id: "custom-button" }  %>
+    <%= f.submit 'Update', class: "btn btn-default btn-primary" %>
+  <% end %>
+<% end  %>

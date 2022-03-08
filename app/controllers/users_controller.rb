@@ -11,13 +11,14 @@ class UsersController < ApplicationController
   def add_photo
     skip_authorization
     @user = User.find(params[:id])
-    @user.update(photo_params)
-    redirect_to user_path(@user)
   end
 
-  private
-
-  def photo_params
-    params.require(:user).permit(photos: [])
+  def update
+    @user = User.find(params[:id])
+    authorize @user
+    @user.photos = params[:user][:photos]
+    @user.save!
+    redirect_to user_path
   end
+
 end
