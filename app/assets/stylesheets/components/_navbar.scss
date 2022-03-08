@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Playfair+Display&family=Roboto:wght@100&family=Space+Mono&display=swap');
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: #845EC2;
+  height: fit-content;
 }
 
+.app_title {
+  font-family: 'Oleo Script', cursive;
+  font-weight: 400;
+  font-size: 44px;
+  color: white;
+  line-height: 60,85px;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-brand{
+  margin-right: 0 !important;
+  padding-top: 12px;
 }
