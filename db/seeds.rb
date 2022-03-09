@@ -224,7 +224,7 @@ file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse
 pongo.photo.attach(io: file, filename: "pongo.jpg", content_type: "image/jpg")
 
 perdita = Dog.create(name: 'Perdita', gender: 'female', age: 5, breed: 'Dalmatian', bio: "Perdita (5, female) she's a queen, no doubt about it! :)", user: anita)
-file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jbl027Sp3PbTw0OuGIRjxAHaJ4%26pid%3DApi&f=1")
+file = URI.open("https://www.edogs.de/magazin/wp-content/uploads/dalmatiner-draussen.jpg")
 perdita.photo.attach(io: file, filename: "perdita.jpg", content_type: "image/jpg")
 
 winnie = Dog.create(name: 'Winnie', gender: 'female', age: 11, breed: 'Dachshund', bio: " very social and friendly sweet being!", user: anja)
