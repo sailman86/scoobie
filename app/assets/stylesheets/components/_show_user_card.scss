@@ -8,6 +8,7 @@
   padding: 14px 14px;
   border-radius: 5px;
   background-color: #f4f4f3;
+  position: relative;
 }
 
 .show_user_card_image {
@@ -21,12 +22,17 @@
 .show_user_card_name {
   font-size: 16px;
   font-weight: bold;
-  padding-right: 80px;
+  left: 130px;
+  position: absolute;
+  top: 25px;
 }
 
 .show_user_card_bio {
   font-size: 12px;
-  padding: 12px 15px;
+  background-color: rgba(236, 233, 229, 0.938);
+  padding: 10px 10px;
+  border-radius: 12px;
+  margin-bottom: 30px;
 }
 
 .show_user_card_button {
@@ -34,7 +40,8 @@
   padding-right: 25px;
 }
 
-.show_user_card .show_user_card_bio {
-  padding: 16px;
-  background: white;
+.friendship {
+  position: absolute;
+  top: 60px;
+  right: 140px;
 }
