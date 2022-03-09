@@ -1,19 +1,32 @@
-<h1>Menage your friendships.</h1>
-
-<h2>Received request</h2>
-<% if @received_requests %>
-  <% @received_requests.each do |request| %>
-    <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
-    <%= request.asker.nickname %>
-    <%= link_to "accept",  accept_friendship_path(request), method: :put %>
-    <%= link_to "deny",  decline_friendship_path(request), method: :put %>
-  <% end %>
-<% end %>
-
-<h2>Pending request</h2>
-<% if @pending_requests %>
-  <% @pending_requests.each do |request| %>
-    <%= cl_image_tag request.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
-    <%= link_to request.receiver.nickname, user_path(request.receiver) %>
-  <% end %>
-<% end %>
+<div class="dashboard_container">
+  <h1 class="text-center my-3">Your friendships</h1>
+  <h4>Hey!</h4>
+  <h6>There's someone who want to be your friend!</h6>
+  <div class="received">
+      <% if @received_requests %>
+        <% @received_requests.each do |request| %>
+        <div class="received_avatar">
+          <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+        </div>
+        <div class="asker_nickname_buttons">
+          <%= link_to request.asker.nickname %>
+          <%= link_to "accept",  accept_friendship_path(request), method: :put, class: "btn btn-flat" %>
+          <%= link_to "deny",  decline_friendship_path(request), method: :put, class: "btn btn-flat" %>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+  <h4>Waiting for</h4>
+  <div class="pending">
+    <div class="pending-requests">
+      <% if @pending_requests %>
+        <% @pending_requests.each do |request| %>
+          <div class="pend">
+            <%= cl_image_tag request.receiver.avatar.key, height: 50, width: 50, crop: :fill, class: "rounded-circle" %>
+            <%= link_to request.receiver.nickname, user_path(request.receiver) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
