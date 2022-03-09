@@ -1,6 +1,9 @@
 .search-box {
-  margin: 10px;
-  padding-left: 33px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
 }
 
 .main-search-input {
@@ -46,9 +49,13 @@
 }
 
 .male-span {
-  background-color: rgb(67, 67, 243);
+  background-color: #845EC2;
 }
 
 .female-span {
-  background-color: rgb(236, 145, 159);
+  background-color: violet;
+}
+
+.filters {
+  padding-bottom: 30px;
 }

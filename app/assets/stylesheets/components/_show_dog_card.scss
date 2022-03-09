@@ -1,7 +1,6 @@
 .show_dog_card {
   display: flexbox;
   margin-bottom: 15px;
-  position: relative;
 }
 
 .show_dog_card_image {
@@ -21,6 +20,6 @@
 .show_dog_card_current_user_actions {
   justify-content: end;
   position: absolute;
-  bottom: 0px;
+  bottom: 100px;
   left: 36%;
 }

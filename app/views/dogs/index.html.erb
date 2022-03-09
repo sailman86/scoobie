@@ -28,7 +28,11 @@
         <div class="dog-card">
           <% if dog.photo.attached? %>
             <%= link_to user_path(dog.user) do %>
-              <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
+              <% if dog.gender == "female" %>
+                <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
+              <% else %>
+                <%= cl_image_tag dog.photo.key, class: "dog-male" %>
+              <% end %>
             <% end %>
           <% end %>
           <div class="card-title">
