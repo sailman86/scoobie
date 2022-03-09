@@ -2,12 +2,12 @@
   color: #845EC2;
 }
 
-.navbar {
-  height: 20vw;
+.foot {
+  height: 50px;
   width: 100%;
   justify-content: space-around;
-}
-
-.foot {
+  background-color: #fff;
   border-top: solid 1px #b799e7;
+  position: fixed;
+  bottom: 0;
 }
