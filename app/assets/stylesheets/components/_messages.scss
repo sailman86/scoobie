@@ -1,6 +1,32 @@
-.message {
-  background-color: rgb(230, 230, 230);
+.sender {
+  background-color: rgb(240, 240, 240);
   padding: 10px;
   border-radius: 12px;
   margin: 10px;
+  .user-nickname {
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+  .message-content {
+    padding-top: 10px;
+    margin-bottom: -2px;
+  }
+}
+.receiver {
+  background-color: rgb(210, 210, 210);
+  padding: 10px;
+  border-radius: 12px;
+  margin: 10px;
+  .user-nickname {
+    padding-left: 15px;
+  }
+  .message-content {
+    padding-top: 10px;
+    margin-bottom: -2px;
+  }
+}
+.sender-nickname {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }

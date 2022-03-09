@@ -16,7 +16,9 @@
   .messages {
     height: 100%;
     overflow: scroll;
+    width: 100%;
     padding: 1rem;
+    margin: auto;
   }
 
   #new_message {
@@ -27,4 +29,25 @@
       margin-bottom: 0;
     }
   }
+}
+
+#message_content {
+  border-radius: 12px;
+}
+
+.submit-button {
+  border: none;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: xx-large;
+}
+
+.form-messages{
+  position: relative;
+}
+
+.chat {
+  padding: 30px;
 }
