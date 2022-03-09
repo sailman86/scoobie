@@ -1,32 +1,24 @@
 <div class="dashboard_container">
   <h1>Your friendships</h1>
 
+  <h4>Received request</h4>
   <div class="received">
-    <div class="recieved_text">
-      <h3>Received request</h3>
-    </div>
-    <div class="received_requests">
       <% if @received_requests %>
         <% @received_requests.each do |request| %>
         <div class="received_avatar">
           <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
         </div>
-        <div class="asker_nickname">
+        <div class="asker_nickname_buttons">
           <%= link_to request.asker.nickname %>
-        </div>
-        <div class="buttons">
           <%= link_to "accept",  accept_friendship_path(request), method: :put, class: "btn btn-flat" %>
           <%= link_to "deny",  decline_friendship_path(request), method: :put, class: "btn btn-flat" %>
         </div>
         <% end %>
       <% end %>
-    </div>
   </div>
 
+  <h4>Pending request</h4>
   <div class="pending">
-    <div class="pending_text">
-      <h3>Pending request</h3>
-    </div>
     <div class="pending_requests">
       <% if @pending_requests %>
         <% @pending_requests.each do |request| %>

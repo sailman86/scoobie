@@ -3,8 +3,10 @@
 }
 
 .received {
-  position: relative;
+  display: flex;
   margin: 15px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .pending {
@@ -16,8 +18,14 @@
   background-color: violet;
   color: aliceblue;
   border: solid white 1px;
+  margin: 4px;
 }
 
-.buttons {
-  position: absolute;
+.asker_nickname_buttons {
+  align-items: flex-center;
+
+}
+
+.received_avatar {
+  align-items: flex-start;
 }
