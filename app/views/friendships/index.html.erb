@@ -1,7 +1,7 @@
 <div class="dashboard_container">
-  <h1>Your friendships</h1>
-
-  <h4>Received request</h4>
+  <h1 class="text-center my-3">Your friendships</h1>
+  <h4>Hey!</h4>
+  <h6>There's someone who want to be your friend!</h6>
   <div class="received">
       <% if @received_requests %>
         <% @received_requests.each do |request| %>
@@ -16,14 +16,15 @@
         <% end %>
       <% end %>
   </div>
-
-  <h4>Pending request</h4>
+  <h4>Waiting for</h4>
   <div class="pending">
-    <div class="pending_requests">
+    <div class="pending-requests">
       <% if @pending_requests %>
         <% @pending_requests.each do |request| %>
-          <%= cl_image_tag request.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
-          <%= link_to request.receiver.nickname, user_path(request.receiver) %>
+          <div class="pend">
+            <%= cl_image_tag request.receiver.avatar.key, height: 50, width: 50, crop: :fill, class: "rounded-circle" %>
+            <%= link_to request.receiver.nickname, user_path(request.receiver) %>
+          </div>
         <% end %>
       <% end %>
     </div>

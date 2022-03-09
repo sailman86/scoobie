@@ -6,7 +6,7 @@
   <%# SEARCHBAR %>
   <div class="search-box">
     <%= form_tag root_path, method: :get do %>
-      <%= text_field_tag :query, params[:query], class:"main-search-input col p-2", type:"search", placeholder: "Search for nearby friends" %>
+      <%= text_field_tag :query, params[:query], class:"main-search-input col p-2", type:"search", placeholder: "Husky" %>
       <%= submit_tag "Search", class:"main-search-button col p-2" %>
     <% end %>
   </div>
@@ -28,7 +28,11 @@
         <div class="dog-card">
           <% if dog.photo.attached? %>
             <%= link_to user_path(dog.user) do %>
-              <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
+              <% if dog.gender == "female" %>
+                <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
+              <% else %>
+                <%= cl_image_tag dog.photo.key, class: "dog-male" %>
+              <% end %>
             <% end %>
           <% end %>
           <div class="card-title">

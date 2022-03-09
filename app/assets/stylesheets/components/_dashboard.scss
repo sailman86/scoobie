@@ -1,0 +1,45 @@
+.dashboard_container {
+  margin: 10px;
+}
+
+.received {
+  display: flex;
+  margin: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pending {
+  margin: 15px;
+}
+
+.pending-requests {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .pend {
+    padding: 12px;
+  }
+  a {
+    padding-left: 6px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+
+.btn {
+  border-radius: 12px;
+  background-color: violet;
+  color: aliceblue;
+  border: solid white 1px;
+  margin: 4px;
+}
+
+.asker_nickname_buttons {
+  align-items: flex-center;
+}
+
+.received_avatar {
+  align-items: flex-start;
+}
