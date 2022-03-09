@@ -1,6 +1,7 @@
-<div class="container chatroom" data-controller="chatroom-subscription"
+<div class="container chatroom"
+  data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
-  <h1>#<%= @chatroom.id %></h1>
+  <h1><%= @chatroom.friendship.receiver.nickname %></h1>
 <%# messages display %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -8,18 +9,16 @@
     <% end %>
  </div>
 <%# form to send messages%>
+  <div class="form-messages">
     <%= simple_form_for [@chatroom, @message], remote: true, html: {data: {chatroom_subscription_target: "form"}} do |f| %>
       <%= f.input :content,
         label: false,
         placeholder: "Type your Message",
         input_html: { autocomplete: 'off' }
       %>
-      <%= f.submit "Send", class: "btn btn-primary" %>
+      <%= button_tag type: 'submit', class: "submit-button" do %>
+        <i class="fas fa-arrow-up"></i>
+      <% end %>
     <% end %>
+    </div>
 </div>
-
-<%# Link to index chats/ needs to be put in the Mesage icon footer %>
-<%= link_to "Chats", chatrooms_path %>
-
-<%# Link to pending and sent requests for friendships(dashboard) needs to go in the PAW Icon on footer %>
-<%= link_to "Dashboard", user_friendships_path(current_user) %>
