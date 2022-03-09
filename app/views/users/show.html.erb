@@ -8,21 +8,7 @@
       <%= cl_image_tag @user.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
     <% end %>
   </div>
-<<<<<<< HEAD
-  <div class="show_user_card_name">
-    <h2>Hi, I'm <%= @user.first_name %></h2>
-  </div>
-  <%# if statement, if we're friends, button appears %>
-  <div class="friendship">
-    <% if @friendship &&  @friendship.status == true %>
-      <div class="show_user_card_button">
-       <%= link_to 'Write me', chatroom_path(@friendship.chatroom), class: "btn btn-primary" %>
-      </div>
-    <% elsif @friendship && @friendship.status == false %>
-       <div> <p>Pending request</p></div>
-    <% else %>
-      <%= button_to "Request", user_friendships_path(@user), method: :post %>
-=======
+
   <div class="show_user_card_name_friendship" style="padding-right: 120px">
     <h2><%= @user.first_name %></h2>
     <%# if statement, if we're friends, button appears %>
@@ -34,7 +20,6 @@
       <% else %>
         <%= button_to "Request", user_friendships_path(@user), method: :post %>
       <% end %>
->>>>>>> 8467233a9df63b3df4c319143a91bc3f9dd0543d
     <% end %>
   </div>
 </div>
