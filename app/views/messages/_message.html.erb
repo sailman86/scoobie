@@ -1,8 +1,9 @@
 <div class="message">
   <div id="message-<%= message.id %>">
     <small>
-      <strong><%= message.user.nickname %></strong>
+      <%= cl_image_tag message.user.avatar.key, height: 50, width: 50, crop: :fill, class: "rounded-circle" %>
+      <strong class="user-nickname"><%= message.user.nickname %></strong>
     </small>
-    <p><%= message.content %></p>
+    <p class="message-content"><%= message.content %></p>
   </div>
 </div>
