@@ -1,8 +1,9 @@
-<h1>Those are all of your friends.</h1>
+<h1>Menage your friendships.</h1>
 
 <h2>Received request</h2>
 <% if @received_requests %>
   <% @received_requests.each do |request| %>
+    <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
     <%= request.asker.nickname %>
     <%= link_to "accept",  accept_friendship_path(request), method: :put %>
     <%= link_to "deny",  decline_friendship_path(request), method: :put %>
@@ -10,11 +11,9 @@
 <% end %>
 
 <h2>Pending request</h2>
-<ul>
+<% if @pending_requests %>
   <% @pending_requests.each do |request| %>
-  <li>
-      <%= request.receiver.avatar.key %>
-      <%= request.receiver.nickname %>
-  </li>
-     <% end %>
-</ul>
+    <%= cl_image_tag request.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+    <%= link_to request.receiver.nickname, user_path(request.receiver) %>
+  <% end %>
+<% end %>
