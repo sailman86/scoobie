@@ -3,6 +3,7 @@
 <h2>Received request</h2>
 <% if @received_requests %>
   <% @received_requests.each do |request| %>
+    <%= request.asker.avatar.key %>
     <%= request.asker.nickname %>
     <%= link_to "accept",  accept_friendship_path(request), method: :put %>
     <%= link_to "deny",  decline_friendship_path(request), method: :put %>
@@ -10,11 +11,9 @@
 <% end %>
 
 <h2>Pending request</h2>
-<ul>
+<% if @pending_requests %>
   <% @pending_requests.each do |request| %>
-  <li>
-      <%= request.receiver.avatar.key %>
-      <%= request.receiver.nickname %>
-  </li>
-     <% end %>
-</ul>
+    <%= request.receiver.avatar.key %>
+    <%= request.receiver.nickname %>
+  <% end %>
+<% end %>
