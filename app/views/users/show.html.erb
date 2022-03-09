@@ -43,18 +43,18 @@
         <div class="show_dog_card_p">
           <p><%= dog.gender.capitalize %></p>
           <p><%= dog.breed.capitalize %></p>
+          <div class="show_dog_card_current_user_actions">
+            <% if policy(dog).edit? %>
+              <%# removed dog.name to display just the icons %>
+              <%= link_to edit_dog_path(dog) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
     <%# wrapping current user actions into a div, to place them into card. do not delete!  %>
-    <div class="show_dog_card_current_user_actions">
-      <% if policy(dog).edit? %>
-        <%# removed dog.name to display just the icons %>
-        <%= link_to edit_dog_path(dog) do %>
-          <i class="fas fa-edit"></i>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 <% end %>
 
