@@ -13,10 +13,10 @@
 
   <%# gender filter %>
   <div class="filters">
-   <div class="round-span male-span" style="background-color: #845EC2">
+   <div class="round-span male-span">
       <%= link_to "", dogs_path(query:"male"), class: "fas fa-mars col-sm p-2 male"  %>
     </div>
-    <div class="round-span female-span", style="background-color: violet">
+    <div class="round-span female-span">
       <%= link_to "", dogs_path(query:"female"), class: "fas fa-venus col-sm p-2 female" %>
     </div>
   </div>
@@ -28,11 +28,7 @@
         <div class="dog-card">
           <% if dog.photo.attached? %>
             <%= link_to user_path(dog.user) do %>
-              <% if dog.gender == "male" %>
-                <%= cl_image_tag dog.photo.key, class: "dog-card-picture dog-male" %>
-              <% else %>
-                <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
-              <% end %>
+              <%= cl_image_tag dog.photo.key, class: "dog-card-picture" %>
             <% end %>
           <% end %>
           <div class="card-title">
