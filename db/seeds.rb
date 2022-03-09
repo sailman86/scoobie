@@ -181,7 +181,7 @@ file = URI.open("https://images.in.locan.to/Mallu-Single-Girl-age-25-DIRECT-PAYM
 ina.avatar.attach(io: file, filename: "ina.jpg", content_type: "image/jpg")
 
 tom = User.create(first_name: 'Tom', last_name: "Kupferberg", nickname: 'Tom', address: 'Ibisweg 12351 Berlin',
-                  bio: "30, I'm new in Berling together with Jerry looking forward for new connections and Fun!",
+                  bio: "30, I'm new in Berling together with Jerry looking forward for new friends and Fun!",
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://photos2.spareroom.co.uk/images/flatshare/listings/large/30/04/30045397.jpg")
 tom.avatar.attach(io: file, filename: "tom.jpg", content_type: "image/jpg")
@@ -290,10 +290,6 @@ felix.photo.attach(io: file, filename: "felix.jpg", content_type: "image/jpg")
 hanna = Dog.create(name: 'Hanna', gender: 'female', age: 9, breed: 'Golden retriever', bio: "My third dog, absoluty ADORABLE, Meeting new People and their dogs means the world to her.", user: angelica)
 file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.Y_IfiMx5bD2ZUWIxG1FT2gHaIG%26pid%3DApi&f=1")
 hanna.photo.attach(io: file, filename: "hanna.jpg", content_type: "image/jpg")
-
-katie = Dog.create(name: 'Katie', gender: 'female', age: 6, breed: 'Labrador black', bio: "adopted her after i had her as foster dog, some idiot left her at the supermarkt, Cutest Dog i've ever had.", user: ina)
-file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.5fDh4_Ay3NGCUHYmYdJmigHaL9%26pid%3DApi&f=1")
-katie.photo.attach(io: file, filename: "katie.jpg", content_type: "image/jpg")
 
 katie = Dog.create(name: 'Katie', gender: 'female', age: 6, breed: 'Labrador black', bio: "adopted her after i had her as foster dog, some idiot left her at the supermarkt, Cutest Dog i've ever had.", user: ina)
 file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.5fDh4_Ay3NGCUHYmYdJmigHaL9%26pid%3DApi&f=1")
