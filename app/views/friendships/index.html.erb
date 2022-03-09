@@ -1,19 +1,39 @@
-<h1>Menage your friendships.</h1>
+<div class="dashboard_container">
+  <h1>Your friendships</h1>
 
-<h2>Received request</h2>
-<% if @received_requests %>
-  <% @received_requests.each do |request| %>
-    <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
-    <%= request.asker.nickname %>
-    <%= link_to "accept",  accept_friendship_path(request), method: :put %>
-    <%= link_to "deny",  decline_friendship_path(request), method: :put %>
-  <% end %>
-<% end %>
+  <div class="received">
+    <div class="recieved_text">
+      <h3>Received request</h3>
+    </div>
+    <div class="received_requests">
+      <% if @received_requests %>
+        <% @received_requests.each do |request| %>
+        <div class="received_avatar">
+          <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+        </div>
+        <div class="asker_nickname">
+          <%= link_to request.asker.nickname %>
+        </div>
+        <div class="buttons">
+          <%= link_to "accept",  accept_friendship_path(request), method: :put, class: "btn btn-flat" %>
+          <%= link_to "deny",  decline_friendship_path(request), method: :put, class: "btn btn-flat" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
-<h2>Pending request</h2>
-<% if @pending_requests %>
-  <% @pending_requests.each do |request| %>
-    <%= cl_image_tag request.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
-    <%= link_to request.receiver.nickname, user_path(request.receiver) %>
-  <% end %>
-<% end %>
+  <div class="pending">
+    <div class="pending_text">
+      <h3>Pending request</h3>
+    </div>
+    <div class="pending_requests">
+      <% if @pending_requests %>
+        <% @pending_requests.each do |request| %>
+          <%= cl_image_tag request.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+          <%= link_to request.receiver.nickname, user_path(request.receiver) %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
