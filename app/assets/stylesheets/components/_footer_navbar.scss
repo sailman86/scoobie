@@ -2,12 +2,14 @@
   color: #845EC2;
 }
 
-.navbar {
-  height: 20vw;
+.navbar footer {
+  height: 12vw;
   width: 100%;
   justify-content: space-around;
 }
 
 .foot {
   border-top: solid 1px #b799e7;
+  position: sticky;
+  bottom: 0;
 }
