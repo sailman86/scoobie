@@ -29,9 +29,9 @@
           <% if dog.photo.attached? %>
             <%= link_to user_path(dog.user) do %>
               <% if dog.gender == "female" %>
-                <%= cl_image_tag dog.photo.key, height: 60, width: 60, crop: :fill, class: "dog-card-picture" %>
+                <%= cl_image_tag dog.photo.key, height: 60, width: 60, crop: :fill, id:"dog-card-picture" %>
               <% else %>
-                <%= cl_image_tag dog.photo.key, height: 60, width: 60, crop: :fill, class: "dog-male" %>
+                <%= cl_image_tag dog.photo.key, height: 60, width: 60, crop: :fill, id:"dog-male" %>
               <% end %>
             <% end %>
           <% end %>
