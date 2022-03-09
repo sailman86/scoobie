@@ -15,7 +15,7 @@
       <% if @friendship &&  @friendship.status == true %>
         <%= link_to 'Write me', chatroom_path(@friendship.chatroom), class: "btn btn-primary" %>
       <% elsif @friendship && @friendship.status == false %>
-        <p>Pending request</p></div>
+        <p>Pending request</p>
       <% else %>
         <%= button_to "Request", user_friendships_path(@user), method: :post %>
       <% end %>
