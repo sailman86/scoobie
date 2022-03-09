@@ -1,8 +1,11 @@
-<div class="message">
+<div class="message <%= message.user == current_user ? 'sender' : 'receiver' %>">
+
   <div id="message-<%= message.id %>">
     <small>
-      <%= cl_image_tag message.user.avatar.key, height: 50, width: 50, crop: :fill, class: "rounded-circle" %>
+    <div class="<%= message.user == current_user ? 'sender-nickname' : nil %>">
+      <%= cl_image_tag message.user.avatar.key, height: 50, width: 50, crop: :fill, class: "rounded-circle image-logo" %>
       <strong class="user-nickname"><%= message.user.nickname %></strong>
+    </div>
     </small>
     <p class="message-content"><%= message.content %></p>
   </div>

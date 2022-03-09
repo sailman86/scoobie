@@ -1,22 +1,45 @@
-<h1><strong>Chat</strong></h1>
-
-<ul>
-  <% @chatrooms.each do |chatroom|  %>
-    <% if chatroom.friendship.asker == current_user %>
-      <li>
-        <% if chatroom.friendship.receiver.avatar.attached? %>
-          <%= cl_image_tag chatroom.friendship.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+<div class="container">
+  <h1 class="text-center chat"><strong>Chat</strong></h1>
+    <% @chatrooms.each do |chatroom|  %>
+  <div class="bring-to-left">
+      <div class="index">
+        <% if chatroom.friendship.asker == current_user %>
+          <div class="d-flex">
+            <% if chatroom.friendship.receiver.avatar.attached? %>
+            <div class="index-item">
+              <%= cl_image_tag chatroom.friendship.receiver.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+            </div>
+            <% end %>
+            <div class="index-item-nickname">
+              <strong><%= link_to chatroom.friendship.receiver.nickname, chatroom_path(chatroom) %></strong>
+                <% if (Time.now.day - chatroom.friendship.created_at.day) == 0 %>
+                  <p>Friends since today.</p>
+                <% else %>
+                  <p><%= (Time.now.day - chatroom.friendship.created_at.day) %> day.</p>
+                <% end %>
+            </div>
+          </div>
         <% end %>
-        <%= link_to chatroom.friendship.receiver.nickname, chatroom_path(chatroom) %>
-      </li>
-    <% end %>
-      <% if chatroom.friendship.receiver == current_user%>
-        <li>
-          <% if chatroom.friendship.asker.avatar.attached? %>
-           <%= cl_image_tag chatroom.friendship.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+      </div>
+       <div class="index">
+          <% if chatroom.friendship.receiver == current_user%>
+            <div class="d-flex">
+              <% if chatroom.friendship.asker.avatar.attached? %>
+              <div class="index-item">
+                <%= cl_image_tag chatroom.friendship.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
+              </div>
+              <% end %>
+              <div class="index-item-nickname">
+                <strong><%= link_to chatroom.friendship.asker.nickname, chatroom_path(chatroom) %></strong>
+                <% if (Time.now.day - chatroom.friendship.created_at.day) == 0 %>
+                  <p>Friends since today.</p>
+                <% else %>
+                  <p><%= (Time.now.day - chatroom.friendship.created_at.day) %> day.</p>
+                <% end %>
+              </div>
+            </div>
           <% end %>
-          <%= link_to chatroom.friendship.asker.nickname, chatroom_path(chatroom) %>
-        </li>
+          </div>
       <% end %>
-  <% end %>
-</ul>
+  </div>
+</div>

@@ -34,3 +34,20 @@
 #message_content {
   border-radius: 12px;
 }
+
+.submit-button {
+  border: none;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: xx-large;
+}
+
+.form-messages{
+  position: relative;
+}
+
+.chat {
+  padding: 30px;
+}
