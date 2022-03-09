@@ -8,6 +8,7 @@
       <%= cl_image_tag @user.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
     <% end %>
   </div>
+<<<<<<< HEAD
   <div class="show_user_card_name">
     <h2>Hi, I'm <%= @user.first_name %></h2>
   </div>
@@ -21,6 +22,19 @@
        <div> <p>Pending request</p></div>
     <% else %>
       <%= button_to "Request", user_friendships_path(@user), method: :post %>
+=======
+  <div class="show_user_card_name_friendship" style="padding-right: 120px">
+    <h2><%= @user.first_name %></h2>
+    <%# if statement, if we're friends, button appears %>
+    <% if @user != current_user %>
+      <% if @friendship &&  @friendship.status == true %>
+        <%= link_to 'Write me', chatroom_path(@friendship.chatroom), class: "btn btn-primary" %>
+      <% elsif @friendship && @friendship.status == false %>
+        <p>Pending request</p></div>
+      <% else %>
+        <%= button_to "Request", user_friendships_path(@user), method: :post %>
+      <% end %>
+>>>>>>> 8467233a9df63b3df4c319143a91bc3f9dd0543d
     <% end %>
   </div>
 </div>
@@ -68,9 +82,5 @@
 
 
   <!-- Gallery of photos -- need to implement bootstrap!! -->
-  <% if @user.photos.attached?  %>
-    <% @user.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  <% end %>
+  <%= render "shared/gallery" %>
 </div>

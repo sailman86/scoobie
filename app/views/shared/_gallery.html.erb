@@ -1,0 +1,7 @@
+<div class="gallery">
+  <% if @user.photos.attached?  %>
+    <% @user.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, class:"mb-3 pic", width: 100, height: 100, crop: :fill %>
+    <% end %>
+  <% end %>
+</div>

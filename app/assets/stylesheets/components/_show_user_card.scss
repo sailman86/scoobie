@@ -8,23 +8,20 @@
   padding: 14px 14px;
   border-radius: 5px;
   background-color: #f4f4f3;
-  position: relative;
 }
 
 .show_user_card_image {
   height: 100%;
   width: 140px;
   object-position: center;
-  align-items: center;
   margin-left: 20px;
+  align-items: flex-start;
 }
 
-.show_user_card_name {
+.show_user_card_name_friendships {
   font-size: 16px;
   font-weight: bold;
-  left: 130px;
-  position: absolute;
-  top: 25px;
+  align-items: flex-center;
 }
 
 .show_user_card_bio {
@@ -33,15 +30,4 @@
   padding: 10px 10px;
   border-radius: 12px;
   margin-bottom: 30px;
-}
-
-.show_user_card_button {
-  padding-top: 70px;
-  padding-right: 25px;
-}
-
-.friendship {
-  position: absolute;
-  top: 60px;
-  right: 140px;
 }
