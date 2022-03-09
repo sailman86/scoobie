@@ -1,22 +1,26 @@
 .show_dog_card {
   display: flexbox;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .show_dog_card_image {
   align-items: center;
-  margin-left: 15px;
+  margin-left: 14px;
 }
 
 .show_dog_card_bio {
-  padding-left: 8px;
+  padding-left: 16px;
 }
 
 .show_dog_card_p {
   line-height: 30%;
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
 .show_dog_card_current_user_actions {
   justify-content: end;
+  position: absolute;
+  bottom: 0px;
+  left: 36%;
 }
