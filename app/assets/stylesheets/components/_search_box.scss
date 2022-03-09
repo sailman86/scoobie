@@ -1,6 +1,8 @@
 .search-box {
-  margin: 10px;
-  padding-left: 33px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
 }
 
 .main-search-input {
