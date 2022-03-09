@@ -4,7 +4,11 @@
   justify-content: space-between;
   background-color: #845EC2;
   height: fit-content;
+  position: fixed;
+  top: 0;
+  height: 50px;
 }
+// in application.sccs is a body with 80px to make room for the rest of page
 
 .app_title {
   font-family: 'Oleo Script', cursive;
@@ -12,6 +16,12 @@
   font-size: 44px;
   color: white;
   line-height: 60,85px;
+  padding-left: 10px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
 }
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
