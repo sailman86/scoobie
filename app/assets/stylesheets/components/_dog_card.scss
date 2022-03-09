@@ -1,6 +1,7 @@
 .card-group {
   display: grid;
 }
+
 // puts the content picture, title and distance in the middle"
 .dog-card {
   align-items: center;
@@ -23,7 +24,6 @@
   object-fit: cover;
   border: solid #845EC2 3px;
 }
-
 
 .card-title {
   justify-content: center;
