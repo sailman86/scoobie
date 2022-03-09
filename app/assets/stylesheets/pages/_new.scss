@@ -6,26 +6,24 @@
 
 .name {
   border-radius: 12px;
-  border: solid #d1d1d1 1px;
 }
 
 .gender {
-  width: 120px;
+  width: 140px;
 }
 
 .d-flex {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .age {
-  width: 60px;
+  width: 80px;
   padding-left: 20px;
 }
 
 .breed {
   border-radius: 12px;
-  border: solid #d1d1d1 1px;
 }
 
 .upload_submit {
