@@ -1,7 +1,9 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 190px 0;
+  padding: 220px 0;
+  width: 100%;
+  position: absolute;
 }
 
 .banner h1 {
@@ -10,6 +12,8 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  position: relative;
+  top: -150px;
 }
 
 .banner p {
@@ -17,4 +21,20 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-photo {
+  height: 44px;
+  bottom: 38px;
+  width: 30%;
+  position: absolute;
+}
+
+.custom-button {
+  background-color: #ffffff;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 94px;
+  width: 33%;
+  justify-content: space-around;
 }
