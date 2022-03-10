@@ -10,6 +10,9 @@
   .message-content {
     padding-top: 10px;
     margin-bottom: -3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }
 .receiver {
@@ -27,6 +30,5 @@
 }
 .sender-nickname {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
 }
