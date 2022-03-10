@@ -37,7 +37,7 @@ Dog.destroy_all
 
 puts 'creating users'
 steffi = User.create(first_name: 'Steffanie', last_name: 'Hofner', nickname: 'Steffi', address: 'Singerstraße 41 10243 Berlin',
-                     bio: '36,  love long walks and in summer going to one of Berliner lakes',
+                     bio: '36, I love long walks and in summer going to one of Berliner lakes with my doggies Kiki and Fifi',
                      email: 'steffi@domain.com', password: '123456')
 file = URI.open("https://com-thehopeline-www.s3.amazonaws.com/LIVE7_NEW/LIVE/wp-content/uploads/2019/07/09170701/happy-single-women-outside-by-sunflowers.jpg")
 steffi.avatar.attach(io: file, filename: "steffi.jpg", content_type: "image/jpg")
@@ -121,31 +121,31 @@ file = URI.open("https://media.istockphoto.com/photos/vertical-portrait-of-matur
 rita.avatar.attach(io: file, filename: "rita.jpg", content_type: "image/jpg")
 
 richard = User.create(first_name: 'Richard', last_name: "Dicksen", nickname: 'Richard', address: 'Sredzkistraße 1 10435 Berlin',
-                      bio: "24, I'm in the forest as often i can, love to be out there in the nature!",
+                      bio: "24, I'm in the forest as often I can, love to be out there in the nature!",
                       email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://i.pinimg.com/originals/43/cb/64/43cb64a4bd7ae3afc067eeba5252b03d.jpg")
 richard.avatar.attach(io: file, filename: "richard.jpg", content_type: "image/jpg")
 
 maria = User.create(first_name: 'Maria', last_name: "Reichelt", nickname: 'Maria', address: 'Dorotheenstr. 30 10117 Berlin',
-                    bio: "31, Proud Mother loves to spend time with many people, exspecily dog owners",
+                    bio: "31, Proud dog mother loves to spend time with many people, exspecily dog owners",
                     email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://beautyspb.com/netcat_files/multifile/1967/1653/1653_Ekaterina_Russian_beauty_6_.jpg")
 maria.avatar.attach(io: file, filename: "maria.jpg", content_type: "image/jpg")
 
 dolores = User.create(first_name: 'Dolores ', last_name: "Tetjev", nickname: 'Dolores', address: 'Andreasstr. 10243 Berlin',
-                      bio: "39, Dog stylistin and owner since over 20 years",
+                      bio: "39, dog stylist and dog owner since I was 6",
                       email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://i.pinimg.com/474x/4b/8b/2e/4b8b2eff80a8e6a55b37eb8e4364f948.jpg")
 dolores.avatar.attach(io: file, filename: "dolores.jpg", content_type: "image/jpg")
 
 dexter = User.create(first_name: 'Dexter', last_name: "Tysen", nickname: 'Dexter', address: 'Fischerinsel 16 10179 Berlin',
-                     bio: "49, Did my Biology Phd on Dogs, love to go in the nature, and parcipate in dog shows.",
+                     bio: "49, I have Phd on Dogs, so to say (Veteneriny research) love to go in the nature, and parcipate in dog shows.",
                      email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://media.istockphoto.com/photos/smiling-middle-age-man-with-pinstripe-suit-coat-picture-id185260228?k=20&m=185260228&s=612x612&w=0&h=t6GnJDr4Z21NhTVNI-5CJdowmoZrccjw6we4ladbasw=")
 dexter.avatar.attach(io: file, filename: "dexter.jpg", content_type: "image/jpg")
 
 lisa = User.create(first_name: 'Lisa ', last_name: "Schneider", nickname: 'Lisa', address: 'Keibelstr. 6 10178 Berlin',
-                   bio: "19, Student of BWL orginal from bavaria now new in Berlin looking for new friends who love dogs as much i do ;)",
+                   bio: "19, Student of BWL orginally from Bavaria, now new in Berlin and looking for new friends who love dogs as much I do ;)",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://d1bvpoagx8hqbg.cloudfront.net/259/c6035f5ba4f7e370dd277f5b1bbb94c9.jpg")
 lisa.avatar.attach(io: file, filename: "lisa.jpg", content_type: "image/jpg")
@@ -157,31 +157,31 @@ file = URI.open("https://d1bvpoagx8hqbg.cloudfront.net/259/2cc0565c71e26db75d0ba
 valerie.avatar.attach(io: file, filename: "valerie.jpg", content_type: "image/jpg")
 
 anna = User.create(first_name: 'Anna', last_name: "Reiters", nickname: 'Anna', address: 'Behrenstr. 10117 Berlin',
-                   bio: "27, I'm a Stylitsin with my first dog, look to connect to over owner the learn more and have fun.",
+                   bio: "27, I'm a hair-stylist with my first dog, look to connect with other owners the learn more about dogs and have fun.",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://i.guim.co.uk/img/media/19f5cb37d9dc2bec3eb5d28c2879b99de1c2956d/0_95_5207_3123/master/5207.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=799ef38ebff3cd5ad8b8e9fba96ec80a")
 anna.avatar.attach(io: file, filename: "anna.jpg", content_type: "image/jpg")
 
 vera = User.create(first_name: 'Vera', last_name: "Pavlov", nickname: 'Vera', address: 'Annenstr. 4 10179 Berlin',
-                   bio: "25, I love to be out in nature with felix, looking for new wander routes around berlin that a good with dogs.",
+                   bio: "25, I love to be out in nature with Felix, looking for new wander routes around Berlin that a good with dogs.",
                    email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://images.in.locan.to/Mallu-Single-Girl-age-25-DIRECT-PAYMENT-3500-ROOM-FREE/vap_5166716362.jpg")
 vera.avatar.attach(io: file, filename: "vera.jpg", content_type: "image/jpg")
 
 angelica = User.create(first_name: 'Angelica', last_name: "Fechter", nickname: 'Angelica', address: 'Deutsch-Kroner-Ring 25 12349 Berlin',
-                       bio: "29, I'm a proud Dog Mommy since i'm 14. I cannot stop talking about Dogs when i meet other people and love to meet other people that do that too.",
+                       bio: "29, I absolutely love dogs and cannot stop talking about Dogs when I meet other people and love to meet other people that do that too.",
                        email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://beautyspb.com/netcat_files/generated/181/1549/580x820/1522/8b0b608598a46487ecdc85c0f2faf509.jpg?crop=0%3A0%3A0%3A0&hash=7df6d17e0468449c8881a300fb11cd83&resize_mode=0&wm_m=0")
 angelica.avatar.attach(io: file, filename: "angelica.jpg", content_type: "image/jpg")
 
 ina = User.create(first_name: 'Ina', last_name: "Drechsler", nickname: 'Ina', address: 'Kuglerstraße 3 10439 Berlin',
-                  bio: "31, I'm working with localy Animal shellter as foster mom for animals, adopeted one of them myself. Looking for a permament friend for People who a interest in fostering.",
+                  bio: "31, I'm working with localy animal shellter as foster mom for animals, adopeted one of them myself. Looking for a friends and possibly can convince you to fostering one one more doggie.",
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://images.in.locan.to/Mallu-Single-Girl-age-25-DIRECT-PAYMENT-3500-ROOM-FREE/vap_5166716362.jpg")
 ina.avatar.attach(io: file, filename: "ina.jpg", content_type: "image/jpg")
 
 tom = User.create(first_name: 'Tom', last_name: "Kupferberg", nickname: 'Tom', address: 'Ibisweg 12351 Berlin',
-                  bio: "30, I'm new in Berling together with Jerry looking forward for new friends and Fun!",
+                  bio: "30, I'm new in Berlin together with Jerry looking forward for new friends and Fun!",
                   email: Faker::Internet.email(domain: 'customdomain.com'), password: '123456')
 file = URI.open("https://photos2.spareroom.co.uk/images/flatshare/listings/large/30/04/30045397.jpg")
 tom.avatar.attach(io: file, filename: "tom.jpg", content_type: "image/jpg")
