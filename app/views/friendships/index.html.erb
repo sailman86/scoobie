@@ -9,7 +9,7 @@
           <%= cl_image_tag request.asker.avatar.key, height: 75, width: 75, crop: :fill, class: "rounded-circle" %>
         </div>
         <div class="asker_nickname_buttons">
-          <%= link_to request.asker.nickname %>
+          <%= link_to request.asker.nickname.capitalize, class: "asker-nickname" %>
           <%= link_to "accept",  accept_friendship_path(request), method: :put, class: "btn btn-flat" %>
           <%= link_to "deny",  decline_friendship_path(request), method: :put, class: "btn btn-flat" %>
         </div>
