@@ -3,33 +3,24 @@
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- Primary Meta Tags -->
-    <title>Scoobie - Search dogs, find friends!</title>
-    <meta name="title" content="Scoobie - Search dogs, find friends!">
-    <meta name="description" content="Scoobie is the first app that connect you with others dog owners. Find the partner for our four-legged friend in a simple and fun way!
-    ">
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://metatags.io/">
-    <meta property="og:title" content="Scoobie - Search dogs, find friends!">
-    <meta property="og:description" content="Scoobie is the first app that connect you with others dog owners. Find the partner for our four-legged friend in a simple and fun way!
-    ">
-    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://metatags.io/">
-    <meta property="twitter:title" content="Scoobie - Search dogs, find friends!">
-    <meta property="twitter:description" content="Scoobie is the first app that connect you with others dog owners. Find the partner for our four-legged friend in a simple and fun way!
-    ">
-    <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
-        <%= csrf_meta_tags %>
-        <%= csp_meta_tag %>
-        <%= action_cable_meta_tag %>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
 
   <body>
