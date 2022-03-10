@@ -1,7 +1,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 220px 0;
+  padding: 225px 0;
   width: 100%;
   position: absolute;
 }
@@ -37,4 +37,17 @@
   bottom: 94px;
   width: 33%;
   justify-content: space-around;
+}
+
+.upload-photo {
+  cursor: pointer;
+  font-weight: 500;
+  position: absolute;
+  left: 15px;
+  bottom: 90px;
+  border: solid;
+  border-radius: 12px;
+  padding: 9px;
+  background: #835ec2;
+  color: white;
 }
