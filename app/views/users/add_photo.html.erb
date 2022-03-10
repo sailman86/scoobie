@@ -4,7 +4,7 @@
     <% if policy(@user).add_photo? %>
       <%=simple_form_for @user, method: :patch do |f| %>
       <div class="d-flex">
-        <%= f.input :photos, as: :file, input_html: { multiple: true, class: "custom-button" }, label: false  %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true, class: "d-none" }, label_html: { class: 'upload-photo'}, label: 'Choose pictures' %>
         <%= f.submit 'Upload', class: "btn btn-photo" %>
       </div>
       <% end %>
