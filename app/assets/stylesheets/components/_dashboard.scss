@@ -44,8 +44,8 @@
   align-items: flex-start;
 }
 
-.asker-nickname {
-  a {
-    text-decoration: none;
-  }
+.asker_nickname_buttons a {
+  text-decoration: none;
+  color: black;
+  padding-right: 16px;
 }
