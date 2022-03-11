@@ -69,7 +69,7 @@ andrea.avatar.attach(io: file, filename: "andrea.jpg", content_type: "image/jpg"
 claudio = User.create(first_name: 'Claudio', last_name: "Falconi", nickname: 'Claudio', address: 'Prinzenstraße 31 10969 Berlin',
                       bio: "32, I like quality people, good techno and well behaved dogs.",
                       email: 'claudio@domain.com', password: '123456')
-file = URI.open("https://d1bvpoagx8hqbg.cloudfront.net/259/55bb6a30f942bee52881886b5ac48a53.jpg")
+file = URI.open("https://avatars.githubusercontent.com/u/91012361?v=4")
 claudio.avatar.attach(io: file, filename: "claudio.jpg", content_type: "image/jpg")
 
 katja = User.create(first_name: 'Katja ', last_name: "Bachmann", nickname: 'Katja', address: 'Boxhagener Str. 80 10245 Berlin',
@@ -78,10 +78,10 @@ katja = User.create(first_name: 'Katja ', last_name: "Bachmann", nickname: 'Katj
 file = URI.open("https://i.dailymail.co.uk/1s/2020/03/30/05/26569840-8166251-image-a-41_1585543065876.jpg")
 katja.avatar.attach(io: file, filename: "katja.jpg", content_type: "image/jpg")
 
-roger = User.create(first_name: 'Roger ', last_name: "Cicero", nickname: 'Roger', address: 'Krüllsstraße 11 12435 Berlin',
+roger = User.create(first_name: 'Kiki ', last_name: "Cicero", nickname: 'Kiki', address: 'Krüllsstraße 11 12435 Berlin',
                     bio: "37, I love to take long walks with my buddy Pongo. We're open to meet occasionally and other dogs and people.",
                     email: 'roger@domain.com', password: '123456')
-file = URI.open("https://media.istockphoto.com/photos/he-feels-at-home-in-the-kitchen-picture-id507448333?k=20&m=507448333&s=612x612&w=0&h=-aKNnfyc4EHeDyfk3nXoQ51cXMryDzTkIerSdSf34r0=")
+file = URI.open("https://avatars.githubusercontent.com/u/94006870?v=4")
 roger.avatar.attach(io: file, filename: "roger.jpg", content_type: "image/jpg")
 
 anita = User.create(first_name: 'Anita ', last_name: "Iglesias", nickname: 'Anita', address: 'Kiefholzstraße 42 12435 Berlin',
@@ -219,9 +219,9 @@ adela = Dog.create(name: 'Adela', gender: 'female', age: 5, breed: 'Dogo Argenti
 file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.nhMEaHc3Y7PDNjhe5ZkvfAHaE0%26pid%3DApi&f=1")
 adela.photo.attach(io: file, filename: "adela.jpg", content_type: "image/jpg")
 
-pongo = Dog.create(name: 'Pongo', gender: 'male', age: 8, breed: 'Dalmatian', bio: "very social and friendly sweet being!", user: roger)
-file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jbl027Sp3PbTw0OuGIRjxAHaJ4%26pid%3DApi&f=1")
-pongo.photo.attach(io: file, filename: "pongo.jpg", content_type: "image/jpg")
+# pongo = Dog.create(name: 'Pongo', gender: 'male', age: 8, breed: 'Dalmatian', bio: "very social and friendly sweet being!", user: roger)
+# file = URI.open("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jbl027Sp3PbTw0OuGIRjxAHaJ4%26pid%3DApi&f=1")
+# pongo.photo.attach(io: file, filename: "pongo.jpg", content_type: "image/jpg")
 
 perdita = Dog.create(name: 'Perdita', gender: 'female', age: 5, breed: 'Dalmatian', bio: "Perdita (5, female) she's a queen, no doubt about it! :)", user: anita)
 file = URI.open("https://www.edogs.de/magazin/wp-content/uploads/dalmatiner-draussen.jpg")
